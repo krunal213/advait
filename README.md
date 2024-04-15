@@ -1,7 +1,6 @@
 <a name="readme-top"></a>
 
 <details>
-  <summary>Table of Contents</summary>
   <ol>
    <li><a href="#built-with">Built With</a></li>
    <li><a href="#installation">Installation</a></li>
