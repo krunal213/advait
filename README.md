@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 <details>
   <ol>
    <li><a href="#built-with">Built With</a></li>
