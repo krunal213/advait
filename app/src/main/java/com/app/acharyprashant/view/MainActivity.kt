@@ -3,10 +3,12 @@ package com.app.acharyprashant.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.acharyprashant.AcharyaprashantApplication
 import com.app.acharyprashant.R
 import com.app.acharyprashant.Result
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mAdapter: PhotoAdapter
@@ -28,6 +30,14 @@ class MainActivity : AppCompatActivity() {
             when (it) {
                 is Result.Success -> {
                     mAdapter.setListOfPhotos(it.data)
+                }
+                is Result.Error -> {
+                    it.exception.message?.let { message ->
+                        Snackbar.make(
+                            main_recycler_view,
+                            message, Snackbar.LENGTH_LONG
+                        ).show()
+                    }
                 }
             }
         }
