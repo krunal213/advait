@@ -5,10 +5,6 @@
   </ol>
 </details>
 
-## About The Project
-
-Android Assignment
-
 ### Built With
 
 Android
