@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.app.acharyprashant"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "UNSPLASH_KEY", "\"GKihubpDMjciU6DqYqD0iMXA5SiGUn_zIfqPHV2k8n8\""
+            buildConfigField "String", "ACCESS_KEY", "\"GKihubpDMjciU6DqYqD0iMXA5SiGUn_zIfqPHV2k8n8\""
+            buildConfigField "String", "SECRET_KEY", "\"wBAU9IR5wh7QpSLTGsL3Ad6lrbAs1ckB7KTzoxQYy84\""
+            buildConfigField "String", "HTTP_URL", "\"https://api.unsplash.com\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':ImageUtils')
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation "com.github.unsplash:unsplash-photopicker-android:1.0.1"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+}
