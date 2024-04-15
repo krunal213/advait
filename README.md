@@ -17,6 +17,8 @@ compileSdk 34
 minSdk 21
 targetSdk 34
 
+displaying image from cache we have to fetch image from network atleast once
+
 
 
 
